@@ -31,5 +31,11 @@ public class Dinosaur : MonoBehaviour
             isGrounded = true;
             animDino.SetBool("IsGrounded", isGrounded);
         }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameManager.Instance.ShowGameOverScreen();
+            animDino.SetTrigger("Die");
+            Time.timeScale = 0f;
+        }
     }
 }

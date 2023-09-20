@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
         {
             randomIndex = Random.Range(0, obstacles.Length);
             randomTime = Random.Range(minTime, maxTime);
-            Instantiate(obstacles[randomIndex], transform.position, Quaternion.identity);
+            Instantiate(obstacles[randomIndex], transform.position, Quaternion.identity, transform);
             yield return new WaitForSeconds(randomTime);
         }
     }
@@ -27,11 +27,5 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnObstacle());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
