@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     private int score;
     private float timer;
     public static GameManager Instance { get; private set; }
-
     public float GetScrollSpeed() { return scrollSpeed; }
     private void Awake()
     {
@@ -42,13 +41,10 @@ public class GameManager : MonoBehaviour
     {
         scrollSpeed = InitialScrollSpeed + timer / 10f;
     }
-    // Start is called before the first frame update
     void Start()
     {
         btnRestart.onClick.AddListener(() => RestartScene());
     }
-
-    // Update is called once per frame
     void Update()
     {
         UpdateScore();

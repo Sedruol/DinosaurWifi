@@ -7,14 +7,11 @@ public class Dinosaur : MonoBehaviour
     private bool isGrounded = true;
     private Rigidbody2D rbDino;
     private Animator animDino;
-    // Start is called before the first frame update
     void Start()
     {
         rbDino = GetComponent<Rigidbody2D>();
         animDino = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && isGrounded)
