@@ -12,9 +12,9 @@ public class Dinosaur : MonoBehaviour
         rbDino = GetComponent<Rigidbody2D>();
         animDino = GetComponent<Animator>();
     }
-    void Update()
+    public void Jump()
     {
-        if (Input.GetMouseButtonDown(0) && isGrounded)
+        if (isGrounded)
         {
             isGrounded = false;
             animDino.SetBool("IsGrounded", isGrounded);

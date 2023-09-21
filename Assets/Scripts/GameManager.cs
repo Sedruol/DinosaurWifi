@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private Button btnRestart;
+    [SerializeField] private Button btnExit;
     [SerializeField] private TMP_Text tmpScore;
     [SerializeField] private int scorePerSecond = 10;
     [SerializeField] private float InitialScrollSpeed = 8f;
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
+    private void ExitGame()
+    {
+        Application.Quit();
+    }
     private void UpdateScore()
     {
         timer += Time.deltaTime;
@@ -44,6 +49,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         btnRestart.onClick.AddListener(() => RestartScene());
+        btnExit.onClick.AddListener(() => ExitGame());
     }
     void Update()
     {
